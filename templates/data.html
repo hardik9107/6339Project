@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+
+<br>
+
+<div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h3 class="text-center login-title">Enter details below to login</h3>
+            <br>
+
+	    <div class="account-wall" role="form" method="POST" action="">
+                <form class="form-signin" method="POST">
+                
+                Username:<input type="text" class="form-control" id = 'param1' name="param1"  placeholder="param1" required value={{request.form.param1}}></br>
+
+				
+                Password:<input type="text" class="form-control" id = 'param2' name="param2"  placeholder="param2" required value={{request.form.param2}}>
+
+                <br>
+		<br>
+		 <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Sign in
+		</button>
+               <br>
+                </form>
+		{%if error %}
+			<p class="error">ERROR: {{error}} </p>
+		{% endif%}
+            
+    </div>
+
+{% endblock %}
